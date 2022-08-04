@@ -1,0 +1,25 @@
+{
+  "name": "the-store",
+  "version": "1.0.0",
+  "description": "VERB \t\t | \t\t  PATH \t\t |  \t DESCRIPTION\r ------------ | ------------- | -------------------\r GET | /api/v1/fragrance/ | index of fragrance |\r GET | /api/v1/fragrance/:id | show page for selected fragrance |\r GET | /api/v1/fragrance/new | page to add fragrance |\r POST | /api/v1/fragrance/ | add a fragrance |\r GET | /api/v1/fragrance/:id/edit | page to edit a fragrance |\r PUT | /api/v1/fragrance/:id | edit/update a fragrance |\r DELETE | /api/v1/fragrance/:id | delete a fragrance |",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielmorris710/YouSmellMe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielmorris710/YouSmellMe/issues"
+  },
+  "homepage": "https://github.com/danielmorris710/YouSmellMe#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1"
+  }
+}
