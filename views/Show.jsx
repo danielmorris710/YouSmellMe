@@ -17,9 +17,9 @@ class Show extends React.Component {
       <h1> 'You Smell Me!' </h1>
       <h2> {fragrance.name} </h2>
       <img src= {fragrance.img}></img>
-      {fragrance.size}<br/>
-      {fragrance.price} <br/>
-      {fragrance.remain}
+      Size:  {fragrance.size}<br/>
+      Price: {fragrance.price} <br/>
+      In Stock: {fragrance.stock}
       <nav>
           <a href="/fragrance"><button type="submit"> Back </button></a>
         </nav>

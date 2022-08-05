@@ -20,6 +20,11 @@ app.get('/fragrance', (req,res) =>{
     res.render('Index', {fragrance})
 })
 
+//new fragrance put this above your Show route
+app.get('/fragrance/new', (req, res) => {
+    res.render('New');
+});
+
 //show route
 app.get('/fragrance/:indexOfFrangranceArray', (req, res) => {
     res.render('Show', {

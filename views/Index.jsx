@@ -19,15 +19,15 @@ class Index extends React.Component {
       <ul>
         {fragrance.map((fragrance, x) => {
             return(
-                
                     <a href={`/fragrance/${x}`}>
                        <img src= {fragrance.img}></img>
                     </a>
-
-                
             )
         })}
       </ul>
+      <nav>
+        <a href="/fragrance/new"><button> Add Fragrance </button></a>
+      </nav>
     </div>
      );
     }
