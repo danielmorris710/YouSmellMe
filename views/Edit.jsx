@@ -9,11 +9,11 @@ const myStyle = {
     alignItems: 'center',
 };
 
-class New extends React.Component {
+class Edit extends React.Component {
   render() {
     return (
         <div style = {myStyle}>
-            <h1>New Fragrance</h1>
+            <h1>Edit Fragrance</h1>
             {/* NOTE: action will be the route, method will be the HTTP verb */}
             <form action="/fragrance" method="POST">
               Name: <input type="text" name="name" /><br/>
@@ -21,10 +21,10 @@ class New extends React.Component {
               Size: <input type="text" name="name" /> oz.<br/>
               Price: $<input type="text" name="name" /><br/>
               Stock: <input type="text" name="name" /><br/>
-              <input type="submit" name="" value="Add Fragrance"/>
-            </form>
+              <input type="submit" name="" value="Update Fragrance"/>
+            </form>   
         </div>);
     }
   }
 
-module.exports = New
+module.exports = Edit

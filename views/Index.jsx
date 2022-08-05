@@ -17,9 +17,9 @@ class Index extends React.Component {
       <h1> 'Welcome To You Smell Me!' </h1>
       <h2> 'Let's Get You Noticed!' </h2>
       <ul>
-        {fragrance.map((fragrance, x) => {
+        {fragrance.map((fragrance) => {
             return(
-                    <a href={`/fragrance/${x}`}>
+                    <a href={`/fragrance/${fragrance.id}`}>
                        <img src= {fragrance.img}></img>
                     </a>
             )
