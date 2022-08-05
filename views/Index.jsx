@@ -11,10 +11,23 @@ const myStyle = {
 
 class Index extends React.Component {
    render () {
+    const { fragrance } = this.props
     return (
     <div style = {myStyle}>
       <h1> 'Welcome To You Smell Me!' </h1>
       <h2> 'Let's Get You Noticed!' </h2>
+      <ul>
+        {fragrance.map((fragrance, x) => {
+            return(
+                
+                    <a href={`/fragrance/${x}`}>
+                       <img src= {fragrance.img}></img>
+                    </a>
+
+                
+            )
+        })}
+      </ul>
     </div>
      );
     }
