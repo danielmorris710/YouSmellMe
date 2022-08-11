@@ -1,12 +1,11 @@
 const express = require('express')
 const mongoose = require('mongoose')
 require('dotenv').config()
-const fragrance = require('./models/fragrance.js')
+const Fragrance = require('./models/fragrance')
 const app = express()
 const port = process.env.PORT || 3003
 const methodOverride = require('method-override')
 const fragranceData = require('./utilities/fragranceData')
-const Fragrance = require('./models/fragrance.js')
 
 //connect to mongoose
 mongoose.connect(process.env.MONGO_URI, {
@@ -25,9 +24,11 @@ app.engine('jsx', require('express-react-views').createEngine()); //initializing
 app.use(express.urlencoded({extended:false}));
 app.use(methodOverride('_method'))
 
+
 //seed route
-app.get('/fragrance/seed', (req, res)=>{
-    Fragrance.create(fragranceData)
+app.get('/fragrance/seed', async (req, res)=>{
+    await  Fragrance.deleteMany({})
+    await  Fragrance.create(fragranceData)
     res.redirect('/fragrance')
 })
 
@@ -52,7 +53,7 @@ app.get('/fragrance/new', (req, res) => {
 //create
 app.post('/fragrance/', (req, res)=>{
     Fragrance.create(req.body, ()=>{
-         res.redirect('/fragrance'); //send the user back to /pokemon
+         res.redirect('/fragrance'); //send the user back to /fragrance
     })
 })
 
@@ -65,20 +66,38 @@ app.get('/fragrance/:id', (req,res)=>{
     })
  })
 
-//edit page route
+//edit route
 app.get('/fragrance/:id/edit', (req,res)=>{
     Fragrance.findById(req.params.id,(err, foundFragrance)=>{
         if(!err){
             res.render('Edit', {
                 fragrance: foundFragrance
             })
-        }else{
+        } else {
             res.send({
                 message:err.message
             })
         }
     })
 })
+
+//update route
+app.put('/fragrance/:id', (req, res) => {
+    req.body.name = req.body.name[0].toUpperCase() + req.body.name.slice(1)
+    Fragrance.findByIdAndUpdate(req.params.id, req.body, {
+        new: true
+    }, (error, fragrance) => {
+        res.redirect(`/fragrance/${req.params.id}`)
+    })
+})
+
+//delete route
+app.delete('/fragrance/:id', (req,res)=>{
+    Fragrance.findByIdAndRemove(req.params.id, (err, data)=>{
+        res.redirect('/fragrance')
+    })
+})
+
 
 //port 
 app.listen(port, () => {
