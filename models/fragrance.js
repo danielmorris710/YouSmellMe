@@ -8,6 +8,6 @@ const fragranceSchema = new mongoose.Schema({
     stock: { type: String, required: true },
 })
 
-const Fragrance = mongoose.model('Pokemon', fragranceSchema)   
+const Fragrance = mongoose.model('Fragrance', fragranceSchema)   
 
 module.exports = Fragrance
