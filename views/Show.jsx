@@ -69,9 +69,10 @@ class Show extends React.Component {
         {fragrance.stock==0? 'Out Of Stock' : `In Stock: ${fragrance.stock}` }
 
         <nav>
-        {fragrance.stock==0?  <button disabled='true' style = {button}> Out Of Stock </button>  : <button style = {button}> Buy </button> }
+        {fragrance.stock==0?  <button disabled='true' style = {button}> Out Of Stock </button>  : <button id="buyBTN" style = {button}> Buy </button> }
         </nav>
 
+       
         <nav>
           <a href="/fragrance"> <button style = {button} type="submit"> Back </button> </a>
         </nav>
@@ -85,5 +86,14 @@ class Show extends React.Component {
     </html>  
      );
     }
- }
+ } 
+
+        const buy = document.getElementById('#buyBTN')
+     
+        let a = 1
+        buyBtn.addEventlistener('click',() => {
+        a++
+        console.log(a)
+       })
+
  module.exports  = Show
