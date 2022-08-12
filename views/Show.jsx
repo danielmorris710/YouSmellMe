@@ -88,12 +88,4 @@ class Show extends React.Component {
     }
  } 
 
-        const buy = document.getElementById('#buyBTN')
-     
-        let a = 1
-        buyBtn.addEventlistener('click',() => {
-        a++
-        console.log(a)
-       })
-
  module.exports  = Show
