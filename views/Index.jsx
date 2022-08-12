@@ -3,7 +3,7 @@ const React = require('react')
 const body = {
   minHeight: '100%',
   backgroundRepeat: 'no repeat',
-  backgroundImage: ' linear-gradient( rgba(255,222,173,1) 0%, rgba(173,205,255,1) 75%, rgba(0,0,0,1) 95%)',
+  backgroundImage: ' linear-gradient( rgba(173,205,255,.5) 20%, rgba(240,240,240,1) 85%, rgba(0,0,0,1) 100%)',
 }
 
 const button = {
@@ -36,8 +36,7 @@ const newDef = {
 const images = {
   margin: '10px',
   height: '200px',
-  marginLeft: '20px',
-  border: 'solid black',
+  marginLeft: '120px',
   borderRadius: '30px',
   boxShadow: '10px 5px 5px grey',
 }
