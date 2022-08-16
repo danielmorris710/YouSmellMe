@@ -23,13 +23,14 @@ const myStyle = {
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
-  fontSize: '60px',
+  fontSize: '15px',
   fontFamily: 'Cinzel Decorative',
   fontWeight: 'bold',
 };
 
 const images = {
-  margin: '5px',
+  margin: '10px',
+  marginTop: '-5px',
   height: '300px',
   borderRadius: '30px',
   boxShadow: '10px 5px 5px grey',
@@ -42,8 +43,8 @@ const newDef = {
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
-  fontSize: '15px',
-  marginTop: '50px'
+  fontSize: '20px',
+  marginTop: '50px',
 }  
 
 const header = {
@@ -61,7 +62,7 @@ const logo = {
   letterSpacing: '5px',
   fontFamily: 'Cinzel Decorative',
   fontSize: '60px',
-  marginLeft: '450px',
+  marginLeft: '400px',
   paddingRight: '225px'
 }
 
@@ -84,18 +85,19 @@ class Show extends React.Component {
 
       <div style = {newDef}>
           <h2> {fragrance.name} </h2>
-
-          <nav>
-          <a href={`/fragrance/${fragrance.id}/edit`}><button style = {button} type="submit"> Edit Fragrance </button> </a>
-          </nav>
-
+      </div>
+      <div style = {myStyle}> 
           <img src= {fragrance.img} style = {images}></img>
           Size:  {fragrance.size} oz.<br/>
           Price: ${fragrance.price} <br/>
           {fragrance.stock>0? `In Stock: ${fragrance.stock}` : 'Out Of Stock'}
-
+      
           <nav>
           {fragrance.stock>0? <form action={`/fragrance/${fragrance.id}/buy?_method=PUT`} method="POST"> <button type="submit" style = {button}> Buy </button> </form> : <button disabled='true' style = {button}> Out Of Stock </button> }
+          </nav>
+
+          <nav>
+          <a href={`/fragrance/${fragrance.id}/edit`}><button style = {button} type="submit"> Edit Fragrance </button> </a>
           </nav>
 
           <nav>

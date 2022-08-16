@@ -24,7 +24,7 @@ const newDef = {
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
-  fontSize: '20px',
+  fontSize: '25px',
   marginTop: '50px'
 }  
 
@@ -56,7 +56,7 @@ const logo = {
   letterSpacing: '5px',
   fontFamily: 'Cinzel Decorative',
   fontSize: '60px',
-  marginLeft: '450px',
+  marginLeft: '430px',
   paddingRight: '225px'
 }
 

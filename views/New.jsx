@@ -44,7 +44,7 @@ const logo = {
   letterSpacing: '5px',
   fontFamily: 'Cinzel Decorative',
   fontSize: '60px',
-  marginLeft: '450px',
+  marginLeft: '400px',
   paddingRight: '225px'
 }
 
