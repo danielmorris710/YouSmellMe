@@ -16,7 +16,6 @@ const button = {
 const backButton = {
   height: '30px',
   borderRadius: '10px',
-  marginLeft: '1300px',
 }
 
 const myStyle = {
@@ -26,17 +25,43 @@ const myStyle = {
   justifyContent: 'center',
   alignItems: 'center',
   fontSize: '20px',
-  fontWeight: 'bold'
+  fontWeight: 'bold',
+  marginTop: '50px'
 };
+
+const header = {
+  height: '100px',
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'center',
+  alignItems: 'center',
+  justifyContent: 'space-evenly',
+  minWidth: '100%',
+  backgroundColor: 'rgb(250, 249, 246, .5)',
+}
+
+const logo = {
+  letterSpacing: '5px',
+  fontFamily: 'Cinzel Decorative',
+  fontSize: '60px',
+  marginLeft: '450px',
+  paddingRight: '225px'
+}
 
 class New extends React.Component {
   render() {
     return (
-    <html style = {body}>  
-      <div style = {myStyle}>
-        <nav>
+    <html style = {body}>
+    <head>
+      <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
+      <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet"></link>
+    </head>
+      <header style = {header}> 
+          <h1 style = {logo}> You Smell Me? </h1>
           <a href="/fragrance"> <button style = {backButton} type="submit"> Back </button> </a>
-        </nav>
+        </header>    
+      <div style = {myStyle}>
           <h1>New Fragrance</h1>
           {/* NOTE: action will be the route, method will be the HTTP verb */}
           <form action="/fragrance" method="POST">

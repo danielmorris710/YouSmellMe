@@ -15,7 +15,6 @@ const button = {
 const backButton = {
   height: '30px',
   borderRadius: '10px',
-  marginLeft: '1300px',
 }
 
 const myStyle = {
@@ -44,14 +43,32 @@ const newDef = {
   justifyContent: 'center',
   alignItems: 'center',
   fontSize: '15px',
-  marginTop: '-5px'
+  marginTop: '50px'
 }  
+
+const header = {
+  height: '100px',
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'center',
+  alignItems: 'center',
+  justifyContent: 'space-evenly',
+  minWidth: '100%',
+  backgroundColor: 'rgb(250, 249, 246, .5)',
+}
+
+const logo = {
+  letterSpacing: '5px',
+  fontFamily: 'Cinzel Decorative',
+  fontSize: '60px',
+  marginLeft: '450px',
+  paddingRight: '225px'
+}
 
 class Show extends React.Component {
   
    render () {
     const { fragrance } = this.props
-
     return (
     <html style = {body}>  
     <head>
@@ -60,11 +77,12 @@ class Show extends React.Component {
         <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet"></link>
         </head>
     <body>
-      <div style = {newDef}>
-        <nav>
+        <header style = {header}> 
+          <h1 style = {logo}> You Smell Me? </h1>
           <a href="/fragrance"> <button style = {backButton} type="submit"> Back </button> </a>
-        </nav>
-          <h1 style = {myStyle}> You Smell Me! </h1>
+        </header>
+
+      <div style = {newDef}>
           <h2> {fragrance.name} </h2>
 
           <nav>
@@ -74,10 +92,10 @@ class Show extends React.Component {
           <img src= {fragrance.img} style = {images}></img>
           Size:  {fragrance.size} oz.<br/>
           Price: ${fragrance.price} <br/>
-          {fragrance.stock==0? 'Out Of Stock' : `In Stock: ${fragrance.stock}` }
+          {fragrance.stock>0? `In Stock: ${fragrance.stock}` : 'Out Of Stock'}
 
           <nav>
-          {fragrance.stock==0?  <button disabled='true' style = {button}> Out Of Stock </button>  : <button id="buyBTN" style = {button}> Buy </button> }
+          {fragrance.stock>0? <form action={`/fragrance/${fragrance.id}/buy?_method=PUT`} method="POST"> <button type="submit" style = {button}> Buy </button> </form> : <button disabled='true' style = {button}> Out Of Stock </button> }
           </nav>
 
           <nav>

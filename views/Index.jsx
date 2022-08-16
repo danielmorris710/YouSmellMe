@@ -6,12 +6,6 @@ const body = {
   backgroundImage: ' linear-gradient( rgba(173,205,255,.5) 20%, rgba(240,240,240,1) 85%, rgba(0,0,0,1) 100%)',
 }
 
-const button = {
-  height: '30px',
-  borderRadius: '10px',
-  marginLeft: '1300px',
-}
-
 const myStyle = {
   color: 'black',
   display: 'flex',
@@ -31,6 +25,7 @@ const newDef = {
   justifyContent: 'center',
   alignItems: 'center',
   fontSize: '20px',
+  marginTop: '50px'
 }  
 
 const images = {
@@ -39,6 +34,30 @@ const images = {
   marginLeft: '120px',
   borderRadius: '30px',
   boxShadow: '10px 5px 5px grey',
+}
+
+const header = {
+  height: '100px',
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'center',
+  alignItems: 'center',
+  justifyContent: 'space-evenly',
+  minWidth: '100%',
+  backgroundColor: 'rgb(250, 249, 246, .5)',
+}
+
+const button = {
+  height: '30px',
+  borderRadius: '10px',
+}
+
+const logo = {
+  letterSpacing: '5px',
+  fontFamily: 'Cinzel Decorative',
+  fontSize: '60px',
+  marginLeft: '450px',
+  paddingRight: '225px'
 }
 
 class Index extends React.Component {
@@ -50,13 +69,14 @@ class Index extends React.Component {
       <link rel="preconnect" href="https://fonts.googleapis.com"></link>
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
       <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet"></link>
-      </head>
-        <nav>
+    </head>
+
+        <header style = {header}> 
+          <h1 style = {logo}> You Smell Me? </h1>
           <a href="/fragrance/new"><button style = {button}> Add Fragrance </button></a>
-        </nav>
+        </header>  
 
       <div style = {myStyle}>
-        <h1> You Smell Me? </h1>
         <h2 style = {newDef}> Let's Get You Noticed! </h2>
         <ul>
           {fragrance.map((fragrance) => {

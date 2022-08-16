@@ -83,10 +83,17 @@ app.get('/fragrance/:id/edit', (req,res)=>{
 
 //update route
 app.put('/fragrance/:id', (req, res) => {
-    req.body.name = req.body.name[0].toUpperCase() + req.body.name.slice(1)
-    Fragrance.findByIdAndUpdate(req.params.id, req.body, {
+    Fragrance.findByIdAndUpdate(req.params.id,(req.body), {
         new: true
     }, (error, fragrance) => {
+        res.redirect(`/fragrance/${req.params.id}`)
+    })    
+})
+
+//update route for buy button
+app.put('/fragrance/:id/buy', (req, res) => {
+    Fragrance.findByIdAndUpdate(req.params.id, {$inc: {stock: -1 } },
+        (error, fragrance) => {
         res.redirect(`/fragrance/${req.params.id}`)
     })
 })
