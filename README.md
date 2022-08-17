@@ -16,6 +16,7 @@ You Smell Me is an online fragrance store for both men and woman. This is my sec
 <br>
 <br>
 
+## Restful Routes
 
    VERB 		 | 		  PATH 		 |  	 DESCRIPTION
 ------------ | ------------- | -------------------
